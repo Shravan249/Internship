@@ -8,17 +8,22 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-public class ProductPage {
+import com.ecom.utilites.AbstractComponent;
+
+public class ProductPage extends AbstractComponent {
 
 	WebDriver driver;
 	public ProductPage(WebDriver driver) {
-		
+		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 	
 	@FindBy(xpath = "//a[normalize-space()='Mobile']")
-	private WebElement listPage;
+	private WebElement mobileListPage;
+	
+	@FindBy(xpath = "//a[normalize-space()='TV']")
+	private WebElement tvListPage;
 	
 	@FindBy(tagName = "h2")
 	private List<WebElement> productNames;
@@ -31,14 +36,34 @@ public class ProductPage {
 	private List<WebElement> priceList;
 	
 	@FindBy(css = "button[title='Add to Cart']")
-	private WebElement cartBtn;
+	private List<WebElement> cartBtn;
+	
+	@FindBy(linkText  =  "Add to Compare")
+	private List<WebElement> compareBtns;
+	
+	@FindBy(linkText = "Add to Wishlist")
+	private List<WebElement> wishlistBtn;
+	
+	@FindBy(css="button[title='Compare']")
+	private WebElement compareBtn;
+	
+	@FindBy(tagName = "h1")
+	private WebElement title;
 	
 	
-
 	
 	public void mobileSection() {
-		listPage.click();
+		mobileListPage.click();
 	}
+	
+	public void tvSection() {
+		tvListPage.click();
+	}
+	
+	public String getPageTitle() {
+		return title.getText();
+	}
+
 	
 	public List<WebElement> getProductNames() {
 		
@@ -50,13 +75,23 @@ public class ProductPage {
 		return priceList;
 	}
 	
-	public void addToCart() {
+	public List<WebElement> addToCart() {
 		
-		 cartBtn.click();
+		 return cartBtn;
 	}
 	
+	public List<WebElement> addToCompare() {
 	
+		return compareBtns;
+		}
 	
+	public List<WebElement> addWishList() {
+		return wishlistBtn;
+	}
+	
+	public void goToCompare() {
+		compareBtn.click();
+	}
 	
 	public void getSorting(String sortBy) {
 

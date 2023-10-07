@@ -5,11 +5,13 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CartPage {
+import com.ecom.utilites.AbstractComponent;
+
+public class CartPage extends AbstractComponent{
 
 	WebDriver driver;
 	public CartPage(WebDriver driver) {
-		
+		super(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
@@ -32,6 +34,12 @@ public class CartPage {
 	@FindBy(tagName = "h1")
 	private WebElement title;
 	
+	
+	@FindBy(css = "strong span[class='price']")
+	private WebElement totalPrice;
+	
+	@FindBy(css = "button[title='Proceed to Checkout']")
+	private WebElement proceedBtn;
 	
 	
 	public void addQuantity(int num) {
@@ -61,6 +69,15 @@ public class CartPage {
 		return title.getText();
 	}
 	
+	public String getTotalPrice() {
+		
+		return totalPrice.getText();
+	}
+	
+	public void goToCheckOut() {
+		
+		proceedBtn.click();
+	}
 	
 	
 }
