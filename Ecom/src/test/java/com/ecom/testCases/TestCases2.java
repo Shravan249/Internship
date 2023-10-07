@@ -25,6 +25,10 @@ public class TestCases2 extends BaseClass {
 	@Test
 	public void testDay5TestCase5() throws InterruptedException {
 		
+		/*
+		 Verifying the functionality of the share wishlist to other people using email
+		 */
+		
 		loginPage = new LoginPage(driver);
 		productPage = new ProductPage(driver);
 		wishlistPage = new WishlistPage(driver);
@@ -58,7 +62,10 @@ public class TestCases2 extends BaseClass {
 
 	@Test(dependsOnMethods = "testDay5TestCase5")
 	public void testDay6TestCase6() throws InterruptedException {
-
+        /* 
+         Verifying the user able to purchase the product from wishlist
+         */
+		
 		loginPage = new LoginPage(driver);
 		productPage = new ProductPage(driver);
 		wishlistPage = new WishlistPage(driver);
@@ -108,6 +115,10 @@ public class TestCases2 extends BaseClass {
 	
 	@Test
 	public void test7() throws InterruptedException {
+		
+		/* 
+		 Verifying the user able to purchase the product 
+		  */
 		
 		loginPage = new LoginPage(driver);
 		productPage = new ProductPage(driver);

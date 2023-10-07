@@ -30,6 +30,11 @@ public class TestCase1 extends BaseClass {
 
 	@Test
 	public void testDay1TestCase1() throws IOException {
+		
+		/*
+		  Verifying the sorting feature By Name 
+		  The products are sorted as per the expected results
+		  */
 
 		List<String> expProductNames = new ArrayList<>();
 		List<String> actProductNames = new ArrayList<>();
@@ -57,6 +62,9 @@ public class TestCase1 extends BaseClass {
 
 	@Test
 	public void testDay2TestCase2() {
+		/*
+		 Verifying the cost of the product is same in list page as well as details page
+		 */
 		String expPrice = "$100";
 		String actPrice = null;
 		String productName = "SONY XPERIA";
@@ -83,6 +91,9 @@ public class TestCase1 extends BaseClass {
 
 	@Test
 	public void testDay3TestCase3() throws InterruptedException {
+		/*
+		 Verifying the quantity of the product are not adding more than the products available in the store
+		 */
 
 		String productName = "SONY XPERIA";
 		String expTitle = "SHOPPING CART";
@@ -121,7 +132,10 @@ public class TestCase1 extends BaseClass {
 
 	@Test
 	public void testDay4TestCase4() throws InterruptedException {
-
+     /*
+      Comparing the two products
+      */
+	    	
 		String[] productNames = { "SONY XPERIA", "IPHONE" };
 		List<String> actProduct = new ArrayList<>();
 		List<String> expProducts = Arrays.asList(productNames);
