@@ -1,30 +1,32 @@
 package com.ecom.testCases;
 
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.Properties;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.ecom.utilites.AbstractComponent;
+import com.ecom.utilites.ListenersFile;
+import com.ecom.utilites.TestUtilities;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 
-public class BaseClass {
+public class BaseClass extends TestUtilities {
 
 	public WebDriver driver;
 	private String[] args = { "--remote-allow-origins=*", "--incognito", "--start-maximized" };
 
+	
 	@BeforeMethod
 	public void openWebSite() throws IOException {
 
@@ -39,6 +41,10 @@ public class BaseClass {
 
 		else if (getValues("browser").equalsIgnoreCase("firefox")) {
 
+			FirefoxOptions options = new FirefoxOptions();
+			options.addArguments(args);
+			WebDriverManager.firefoxdriver().setup();
+			driver = new FirefoxDriver(options);
 		}
 
 		else if (getValues("browser").equalsIgnoreCase("edge")) {
@@ -50,39 +56,8 @@ public class BaseClass {
 		}
 
 		driver.get(getValues("baseURL"));
+
 	}
-
-	public String getValues(String key) throws IOException {
-		FileInputStream fis = new FileInputStream(new File("./Configuration/Config.properties"));
-		Properties prop = new Properties();
-		prop.load(fis);
-		return prop.getProperty(key);
-	}
-
-	public double getParasedInput(String input) {
-		double value;
-		if (input.contains(",")) {
-			value = Double.parseDouble(input.substring(1).replaceAll(",", ""));
-			return value;
-		}
-
-		else {
-			value = Double.parseDouble(input.substring(1).replaceAll(",", ""));
-			return value;
-		}
-	}
-
-	public  String getScreenshot(String testName, WebDriver driver) throws IOException {
-		
-		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy.MM.dd_HH.mm.ss");
-		String timestamp=dateFormat.format(new Date());
-		String path="./screenshot/" + testName + timestamp + ".png";
-		File ts = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
-		File destfile = new File(path);
-		FileUtils.copyFile(ts, destfile);
-		return path;
-	}
-
 
 	@AfterMethod
 	public void tearDown() {

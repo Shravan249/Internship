@@ -14,6 +14,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.aventstack.extentreports.ExtentTest;
+import com.ecom.Exceldataproviders.DataExtractors;
 import com.ecom.pageObjects.CartPage;
 import com.ecom.pageObjects.CheckOutPage;
 import com.ecom.pageObjects.LoginPage;
@@ -30,11 +32,11 @@ public class TestCase1 extends BaseClass {
 
 	@Test
 	public void testDay1TestCase1() throws IOException {
-		
+
 		/*
-		  Verifying the sorting feature By Name 
-		  The products are sorted as per the expected results
-		  */
+		 * Verifying the sorting feature By Name The products are sorted as per the
+		 * expected results
+		 */
 
 		List<String> expProductNames = new ArrayList<>();
 		List<String> actProductNames = new ArrayList<>();
@@ -46,6 +48,7 @@ public class TestCase1 extends BaseClass {
 		for (WebElement ele : beforeNames) {
 			expProductNames.add(ele.getText());
 		}
+
 		Collections.sort(expProductNames);
 
 		productPage.getSorting("Name");
@@ -60,15 +63,13 @@ public class TestCase1 extends BaseClass {
 
 	}
 
-	@Test
-	public void testDay2TestCase2() {
+	@Test(dataProvider = "testCase2Data", dataProviderClass = DataExtractors.class)
+	public void testDay2TestCase2(String expPrice, String productName) {
 		/*
-		 Verifying the cost of the product is same in list page as well as details page
+		 * Verifying the cost of the product is same in list page as well as details
+		 * page
 		 */
-		String expPrice = "$100";
-		String actPrice = null;
-		String productName = "SONY XPERIA";
-
+		String actPrice = "";
 		productPage = new ProductPage(driver);
 		productPage.mobileSection();
 		List<WebElement> productsList = productPage.getProductNames();
@@ -89,24 +90,22 @@ public class TestCase1 extends BaseClass {
 
 	}
 
-	@Test
-	public void testDay3TestCase3() throws InterruptedException {
+	@Test(dataProvider = "testCase3Data", dataProviderClass = DataExtractors.class)
+	public void testDay3TestCase3(String productName, String expErrorMsg, String expEmptyMsg)
+			throws InterruptedException, IOException {
 		/*
-		 Verifying the quantity of the product are not adding more than the products available in the store
+		 * Verifying the quantity of the product are not adding more than the products
+		 * available in the store
 		 */
 
-		String productName = "SONY XPERIA";
-		String expTitle = "SHOPPING CART";
-		int numberOfQuantity = 1000;
-		String expErrorMsg = "The maximum quantity allowed for purchase is 500.";
-		String expEmptyMsg = "SHOPPING CART IS EMPTY";
-
+		String expCartPageTitle = getValues("cartPageTitle");
+		int quantity = 1000;
 		productPage = new ProductPage(driver);
 		productPage.mobileSection();
 		List<WebElement> productsList = productPage.getProductNames();
 
-		for(int i=0;i<productsList.size();i++) {
-			if(productsList.get(i).getText().equalsIgnoreCase(productName)) {
+		for (int i = 0; i < productsList.size(); i++) {
+			if (productsList.get(i).getText().equalsIgnoreCase(productName)) {
 				productPage.addToCart().get(i).click();
 				break;
 			}
@@ -115,30 +114,29 @@ public class TestCase1 extends BaseClass {
 		Thread.sleep(3000);
 		cartPage = new CartPage(driver);
 
-		String actTitle = cartPage.getTitle();
-		cartPage.addQuantity(numberOfQuantity);
+		String actCartPageTitle = cartPage.getTitle();
+		cartPage.addQuantity(quantity);
 		cartPage.updateQuantity();
 		String actErrorMsg = cartPage.getErrorMsg();
 		cartPage.emptyCart();
 		String actEmptyMsg = cartPage.getTitle();
 
 		SoftAssert soft = new SoftAssert();
-		soft.assertEquals(actTitle, expTitle);
+		soft.assertEquals(actCartPageTitle, expCartPageTitle);
 		soft.assertEquals(actErrorMsg, expErrorMsg);
 		soft.assertEquals(actEmptyMsg, expEmptyMsg);
 		soft.assertAll();
 
 	}
 
-	@Test
-	public void testDay4TestCase4() throws InterruptedException {
-     /*
-      Comparing the two products
-      */
-	    	
-		String[] productNames = { "SONY XPERIA", "IPHONE" };
+	@Test(dataProvider = "testCase4Data", dataProviderClass = DataExtractors.class)
+	public void testDay4TestCase4(String product1, String product2) throws InterruptedException {
+		/*
+		 * Comparing the two products
+		 */
+
 		List<String> actProduct = new ArrayList<>();
-		List<String> expProducts = Arrays.asList(productNames);
+		List<String> expProducts = Arrays.asList(product1, product2);
 		productPage = new ProductPage(driver);
 		productPage.mobileSection();
 		List<WebElement> productsList = productPage.getProductNames();
@@ -167,8 +165,5 @@ public class TestCase1 extends BaseClass {
 		driver.switchTo().window(parentId);
 		Assert.assertEquals(actProduct, actProduct);
 	}
-
-	
-
 
 }

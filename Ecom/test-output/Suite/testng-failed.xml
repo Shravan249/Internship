@@ -4,22 +4,17 @@
   <listeners>
     <listener class-name="com.ecom.utilites.ListenersFile"/>
   </listeners>
-  <test thread-count="5" name="Test(failed)">
+  <test thread-count="5" parallel="classes" name="Test(failed)">
     <classes>
       <class name="com.ecom.testCases.TestCases2">
         <methods>
+          <include name="testDay6TestCase6"/>
           <include name="openWebSite"/>
           <include name="tearDown"/>
+          <include name="testDay5TestCase5"/>
           <include name="test7"/>
         </methods>
       </class> <!-- com.ecom.testCases.TestCases2 -->
-      <class name="com.ecom.testCases.TestCase1">
-        <methods>
-          <include name="openWebSite"/>
-          <include name="tearDown"/>
-          <include name="testDay3TestCase3"/>
-        </methods>
-      </class> <!-- com.ecom.testCases.TestCase1 -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

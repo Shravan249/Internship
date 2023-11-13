@@ -1,19 +1,16 @@
 package com.ecom.utilites;
 
-import java.io.File;
-import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import org.apache.commons.io.FileUtils;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import com.aventstack.extentreports.ExtentReports;
+import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import com.ecom.testCases.BaseClass;
 
-public class ExtentRepo {
+public class ExtentRepo extends BaseClass{
 
 	public static ExtentReports getReport() {
 		String path=getReportsPath();
@@ -24,19 +21,22 @@ public class ExtentRepo {
 		
 		ExtentReports extent=new ExtentReports();
 		extent.attachReporter(reporter);
-		extent.setSystemInfo("Tester", "Shravan Kumar");
-		
+		extent.setSystemInfo("OS", System.getProperty("os.version"));
+		extent.setSystemInfo("Java version", System.getProperty("java.version"));
+	    
 		return extent;
 	}
 	
 	
 	public static String getReportsPath() {
 		
-		SimpleDateFormat dateFormat=new SimpleDateFormat("yyy.MM.dd_HH.mm.ss");
+		SimpleDateFormat dateFormat=new SimpleDateFormat("dd-MM-yyyy_HH.mm.ss");
 		String timestamp=dateFormat.format(new Date());
 		String reportFile="./reports/index "+timestamp+".html";
 		return reportFile;
 		
 	}
+	
+
 	
 }

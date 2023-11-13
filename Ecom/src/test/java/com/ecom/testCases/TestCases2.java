@@ -1,11 +1,13 @@
 package com.ecom.testCases;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
+import com.ecom.Exceldataproviders.DataExtractors;
 import com.ecom.pageObjects.CartPage;
 import com.ecom.pageObjects.CheckOutPage;
 import com.ecom.pageObjects.LoginPage;
@@ -19,27 +21,26 @@ public class TestCases2 extends BaseClass {
 	CartPage cartPage;
 	WishlistPage wishlistPage;
 	CheckOutPage checkoutPage;
+	DataExtractors data=new DataExtractors();
 	
 	
 	
-	@Test
-	public void testDay5TestCase5() throws InterruptedException {
+	@Test(dataProvider = "testCase5Data",dataProviderClass = DataExtractors.class)
+	public void testDay5TestCase5(String productName, String message1, String email, String message2 ) throws InterruptedException, IOException {
 		
 		/*
 		 Verifying the functionality of the share wishlist to other people using email
 		 */
-		
+
 		loginPage = new LoginPage(driver);
 		productPage = new ProductPage(driver);
 		wishlistPage = new WishlistPage(driver);
 		SoftAssert sa = new SoftAssert();
 
-		String productName = "LG LCD";// SAMSUNG LCD;
-		String expTitle = "TV";
-		String expMsg = "Your Wishlist has been shared.";
+		String expTitle = getValues("TvPageTitle");
 
-		loginPage.loginInToAccount("king01@gmail.com", "King@143");
-
+		loginPage.loginInToAccount(getValues("userName"), getValues("password"));
+		
 		productPage.tvSection();
 		String actTile = productPage.getPageTitle();
 		sa.assertEquals(actTile, expTitle);
@@ -52,16 +53,16 @@ public class TestCases2 extends BaseClass {
 			}
 		}
 
-		wishlistPage.shareProduct("king01@gmail.com", "Checkout this product.....:)");
+		wishlistPage.shareProduct(email, message2);
 		String actMsg = wishlistPage.getOutputMsg();
 
-		sa.assertEquals(actMsg, expMsg);
+		sa.assertEquals(actMsg, message1);
 		sa.assertAll();
 		Thread.sleep(5000);
 	}
 
 	@Test(dependsOnMethods = "testDay5TestCase5")
-	public void testDay6TestCase6() throws InterruptedException {
+	public void testDay6TestCase6() throws InterruptedException, IOException {
         /* 
          Verifying the user able to purchase the product from wishlist
          */
@@ -74,20 +75,20 @@ public class TestCases2 extends BaseClass {
 
 		SoftAssert sa = new SoftAssert();
 
-		String expPagetilte1 = "MY WISHLIST";
-		String expPagetilte2 = "SHOPPING CART";
-		String expPageTitle3 = "CHECKOUT";
+		String expWishPagetilte = getValues("wishPageTitle");
+		String expCartPagetilte = getValues("cartPageTitle");
+		String expCheckoutPageTitle = getValues("checkoutPageTitle");
 		String paymentMethod = "Check / Money order";
 		String expProductName = "LG LCD";
 
-		loginPage.loginInToAccount("king01@gmail.com", "King@143");
+		loginPage.loginInToAccount(getValues("userName"), getValues("password"));
 		loginPage.goToWishlist();
-		String actpageTitle = wishlistPage.getTitle();
+		String actWishPageTitle = wishlistPage.getTitle();
 		wishlistPage.goToCart();
-		String actPageTitle2 = cartPage.getTitle();
+		String actCartPageTitle = cartPage.getTitle();
 		String productPrice = cartPage.getTotalPrice();
 		cartPage.goToCheckOut();
-		String actPageTitle3 = checkoutPage.getTitle();
+		String actCheckoutPageTitle = checkoutPage.getTitle();
 		checkoutPage.address();
 
 		Thread.sleep(3000);
@@ -103,9 +104,9 @@ public class TestCases2 extends BaseClass {
 		double actTotalPrice = getParasedInput(productTotalPrice);
 
 
-		sa.assertEquals(actpageTitle, expPagetilte1);
-		sa.assertEquals(actPageTitle2, expPagetilte2);
-		sa.assertEquals(actPageTitle3, expPageTitle3);
+		sa.assertEquals(actWishPageTitle, expWishPagetilte);
+		sa.assertEquals(actCartPageTitle, expCartPagetilte);
+		sa.assertEquals(actCheckoutPageTitle, expCheckoutPageTitle);
 		sa.assertEquals(actProductName, expProductName);
 		sa.assertEquals(actTotalPrice, expPrice);
 
@@ -113,8 +114,8 @@ public class TestCases2 extends BaseClass {
 
 	}
 	
-	@Test
-	public void test7() throws InterruptedException {
+	@Test(dataProvider = "testCase7Data",dataProviderClass = DataExtractors.class)
+	public void test7(String productName, String paymentMethod) throws InterruptedException, IOException {
 		
 		/* 
 		 Verifying the user able to purchase the product 
@@ -125,26 +126,23 @@ public class TestCases2 extends BaseClass {
 		cartPage = new CartPage(driver);
 		checkoutPage = new CheckOutPage(driver);
 		
-		String expProductName="SONY XPERIA";
-		String paymentMethod = "Check / Money order";
-		String expPagetilte = "SHOPPING CART";
-		String expPageTitle2 = "CHECKOUT";
+		String expCartPagetilte = getValues("cartPageTitle");
+		String expCheckoutPageTitle = getValues("checkoutPageTitle");
 		
-		loginPage.loginInToAccount("king01@gmail.com", "King@143");
+		loginPage.loginInToAccount(getValues("userName"), getValues("password"));
 		productPage.mobileSection();
 		List<WebElement> productsList = productPage.getProductNames();
-		
 		for(int i=0;i<productsList.size();i++) {
-			if(productsList.get(i).getText().equalsIgnoreCase(expProductName)) {
+			if(productsList.get(i).getText().equalsIgnoreCase(productName)) {
 				productPage.addToCart().get(i).click();
 				break;
 			}
 		}
 		
 
-		String actTitle = cartPage.getTitle();
+		String actCartPageTitle = cartPage.getTitle();
 		cartPage.goToCheckOut();
-		String actPageTitle2 = checkoutPage.getTitle();
+		String actCheckouPagePageTitle = checkoutPage.getTitle();
 		checkoutPage.address();
 		Thread.sleep(3000);
 		String flatPrice = checkoutPage.getFlatPrice();
@@ -153,9 +151,9 @@ public class TestCases2 extends BaseClass {
 		checkoutPage.placeOrder();
 
 		SoftAssert sa = new SoftAssert();
-		sa.assertEquals(actTitle, expPagetilte);
-		sa.assertEquals(actPageTitle2, expPageTitle2);
-		sa.assertEquals(actProductName, expProductName);
+		sa.assertEquals(actCartPageTitle, expCartPagetilte);
+		sa.assertEquals(actCheckouPagePageTitle, expCheckoutPageTitle);
+		sa.assertEquals(actProductName, productName);
 		sa.assertAll();
 		
 	}
