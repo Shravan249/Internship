@@ -10,11 +10,12 @@ import java.util.Properties;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebDriver;
+
+import com.ecom.testCases.TestDriver;
 
 public class TestUtilities {
 
-	public String getValues(String key) throws IOException {
+	public static String getValues(String key) throws IOException {
 		FileInputStream fis = new FileInputStream(new File("./Configuration/Config.properties"));
 		Properties prop = new Properties();
 		prop.load(fis);
@@ -34,12 +35,12 @@ public class TestUtilities {
 		}
 	}
 
-	public  String getScreenshot(String testName, WebDriver driver) throws IOException {
+	public  String getScreenshot(String testName) throws IOException {
 		
 		SimpleDateFormat dateFormat=new SimpleDateFormat("yyyy.MM.dd_HH.mm.ss");
 		String timestamp=dateFormat.format(new Date());
-		String path="./screenshot/" + testName + timestamp + ".png";
-		File ts = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+		String path="/Ecom/screenshot/" + testName + timestamp + ".png";
+		File ts = ((TakesScreenshot) TestDriver.getDriver()).getScreenshotAs(OutputType.FILE);
 		File destfile = new File(path);
 		FileUtils.copyFile(ts, destfile);
 		return path;

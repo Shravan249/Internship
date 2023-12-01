@@ -14,7 +14,6 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
 
-import com.aventstack.extentreports.ExtentTest;
 import com.ecom.Exceldataproviders.DataExtractors;
 import com.ecom.pageObjects.CartPage;
 import com.ecom.pageObjects.CheckOutPage;
@@ -41,7 +40,7 @@ public class TestCase1 extends BaseClass {
 		List<String> expProductNames = new ArrayList<>();
 		List<String> actProductNames = new ArrayList<>();
 
-		productPage = new ProductPage(driver);
+		productPage = new ProductPage(TestDriver.getDriver());
 		productPage.mobileSection();
 		List<WebElement> beforeNames = productPage.getProductNames();
 
@@ -70,7 +69,7 @@ public class TestCase1 extends BaseClass {
 		 * page
 		 */
 		String actPrice = "";
-		productPage = new ProductPage(driver);
+		productPage = new ProductPage(TestDriver.getDriver());
 		productPage.mobileSection();
 		List<WebElement> productsList = productPage.getProductNames();
 		List<WebElement> productsPrice = productPage.getProductsPrice();
@@ -100,7 +99,7 @@ public class TestCase1 extends BaseClass {
 
 		String expCartPageTitle = getValues("cartPageTitle");
 		int quantity = 1000;
-		productPage = new ProductPage(driver);
+		productPage = new ProductPage(TestDriver.getDriver());
 		productPage.mobileSection();
 		List<WebElement> productsList = productPage.getProductNames();
 
@@ -112,7 +111,7 @@ public class TestCase1 extends BaseClass {
 		}
 
 		Thread.sleep(3000);
-		cartPage = new CartPage(driver);
+		cartPage = new CartPage(TestDriver.getDriver());
 
 		String actCartPageTitle = cartPage.getTitle();
 		cartPage.addQuantity(quantity);
@@ -137,7 +136,7 @@ public class TestCase1 extends BaseClass {
 
 		List<String> actProduct = new ArrayList<>();
 		List<String> expProducts = Arrays.asList(product1, product2);
-		productPage = new ProductPage(driver);
+		productPage = new ProductPage(TestDriver.getDriver());
 		productPage.mobileSection();
 		List<WebElement> productsList = productPage.getProductNames();
 		List<WebElement> compareBtn = productPage.addToCompare();
@@ -150,19 +149,19 @@ public class TestCase1 extends BaseClass {
 		}
 
 		productPage.goToCompare();
-		Set<String> wind = driver.getWindowHandles();
+		Set<String> wind = TestDriver.getDriver().getWindowHandles();
 		Iterator<String> it = wind.iterator();
 		String parentId = it.next();
 		String childId = it.next();
 
-		driver.switchTo().window(childId);
-		List<WebElement> names = driver.findElements(By.tagName("h2"));
+		TestDriver.getDriver().switchTo().window(childId);
+		List<WebElement> names = TestDriver.getDriver().findElements(By.tagName("h2"));
 		for (WebElement name : names) {
 			actProduct.add(name.getText());
 		}
 
-		driver.findElement(By.cssSelector("button[title='Close Window']")).click();
-		driver.switchTo().window(parentId);
+		TestDriver.getDriver().findElement(By.cssSelector("button[title='Close Window']")).click();
+		TestDriver.getDriver().switchTo().window(parentId);
 		Assert.assertEquals(actProduct, actProduct);
 	}
 

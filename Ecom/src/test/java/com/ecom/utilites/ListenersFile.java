@@ -1,6 +1,5 @@
 package com.ecom.utilites;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -35,8 +34,7 @@ public class ListenersFile extends BaseClass implements ITestListener {
 
 		try {
 
-			driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
-			filepath = getScreenshot(result.getMethod().getMethodName(), driver);
+			filepath = getScreenshot(result.getMethod().getMethodName());
 			safe.get().addScreenCaptureFromPath(filepath, result.getMethod().getMethodName());
 
 		} catch (Exception e) {

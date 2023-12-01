@@ -11,13 +11,11 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import com.aventstack.extentreports.ExtentTest;
-
 public class AbstractComponent  {
 
 	
 	WebDriver driver;
-	Duration time=Duration.ofSeconds(3);
+	Duration time=Duration.ofSeconds(10);
 	public WebDriverWait wait;
     
 	
@@ -42,7 +40,7 @@ public class AbstractComponent  {
 	
 	public void waitToInvisible(WebElement  ele) throws InterruptedException {
 		
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		//wait.until(ExpectedConditions.invisibilityOf(ele));
 	}
 	

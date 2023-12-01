@@ -1,187 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="12" passed="12" failed="0" skipped="0">
+<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-13T18:48:15 IST" name="Suite" finished-at="2023-11-13T18:50:29 IST" duration-ms="134690">
+  <suite started-at="2023-12-01T15:02:43 IST" name="Suite" finished-at="2023-12-01T15:03:51 IST" duration-ms="67818">
     <groups>
     </groups>
-    <test started-at="2023-11-13T18:48:15 IST" name="Test1" finished-at="2023-11-13T18:50:15 IST" duration-ms="120739">
-      <class name="com.ecom.testCases.TestCase1">
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:48:15 IST" name="openWebSite" finished-at="2023-11-13T18:49:06 IST" duration-ms="51707" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openWebSite -->
-        <test-method signature="testDay1TestCase1()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:06 IST" name="testDay1TestCase1" finished-at="2023-11-13T18:49:09 IST" duration-ms="2388" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDay1TestCase1 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:09 IST" name="tearDown" finished-at="2023-11-13T18:49:09 IST" duration-ms="315" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:09 IST" name="openWebSite" finished-at="2023-11-13T18:49:14 IST" duration-ms="4495" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openWebSite -->
-        <test-method signature="testDay2TestCase2(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:14 IST" name="testDay2TestCase2" data-provider="testCase2Data" finished-at="2023-11-13T18:49:15 IST" duration-ms="1481" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[$100]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[SONY XPERIA]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDay2TestCase2 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:15 IST" name="tearDown" finished-at="2023-11-13T18:49:15 IST" duration-ms="217" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:15 IST" name="openWebSite" finished-at="2023-11-13T18:49:20 IST" duration-ms="4337" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openWebSite -->
-        <test-method signature="testDay2TestCase2(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:20 IST" name="testDay2TestCase2" data-provider="testCase2Data" finished-at="2023-11-13T18:49:21 IST" duration-ms="1529" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[$500]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[IPHONE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDay2TestCase2 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:21 IST" name="tearDown" finished-at="2023-11-13T18:49:22 IST" duration-ms="257" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:22 IST" name="openWebSite" finished-at="2023-11-13T18:49:26 IST" duration-ms="4492" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openWebSite -->
-        <test-method signature="testDay3TestCase3(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:26 IST" name="testDay3TestCase3" data-provider="testCase3Data" finished-at="2023-11-13T18:49:39 IST" duration-ms="12663" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[SONY XPERIA]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[The maximum quantity allowed for purchase is 500.]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SHOPPING CART IS EMPTY]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDay3TestCase3 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:39 IST" name="tearDown" finished-at="2023-11-13T18:49:39 IST" duration-ms="246" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:39 IST" name="openWebSite" finished-at="2023-11-13T18:49:44 IST" duration-ms="4670" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openWebSite -->
-        <test-method signature="testDay3TestCase3(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:44 IST" name="testDay3TestCase3" data-provider="testCase3Data" finished-at="2023-11-13T18:49:54 IST" duration-ms="10568" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[IPHONE]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[The maximum quantity allowed for purchase is 500.]]>
-              </value>
-            </param>
-            <param index="2">
-              <value>
-                <![CDATA[SHOPPING CART IS EMPTY]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDay3TestCase3 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:54 IST" name="tearDown" finished-at="2023-11-13T18:49:55 IST" duration-ms="318" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:55 IST" name="openWebSite" finished-at="2023-11-13T18:49:56 IST" duration-ms="1729" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openWebSite -->
-        <test-method signature="testDay4TestCase4(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:49:56 IST" name="testDay4TestCase4" data-provider="testCase4Data" finished-at="2023-11-13T18:50:05 IST" duration-ms="8517" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[SONY XPERIA]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[IPHONE]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDay4TestCase4 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:50:05 IST" name="tearDown" finished-at="2023-11-13T18:50:05 IST" duration-ms="257" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:50:05 IST" name="openWebSite" finished-at="2023-11-13T18:50:09 IST" duration-ms="4391" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- openWebSite -->
-        <test-method signature="testDay4TestCase4(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:50:09 IST" name="testDay4TestCase4" data-provider="testCase4Data" finished-at="2023-11-13T18:50:15 IST" duration-ms="5682" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[SONY XPERIA]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[SAMSUNG GALAXY]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testDay4TestCase4 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@1df8da7a]" started-at="2023-11-13T18:50:15 IST" name="tearDown" finished-at="2023-11-13T18:50:15 IST" duration-ms="255" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDown -->
-      </class> <!-- com.ecom.testCases.TestCase1 -->
-    </test> <!-- Test1 -->
-    <test started-at="2023-11-13T18:48:15 IST" name="Test2" finished-at="2023-11-13T18:50:29 IST" duration-ms="134690">
+    <test started-at="2023-12-01T15:02:43 IST" name="Test1" finished-at="2023-12-01T15:03:51 IST" duration-ms="67818">
       <class name="com.ecom.testCases.TestCases2">
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:48:16 IST" name="openWebSite" finished-at="2023-11-13T18:49:06 IST" duration-ms="49509" status="PASS">
+        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:02:44 IST" name="openWebSite" finished-at="2023-12-01T15:02:49 IST" duration-ms="4402" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openWebSite -->
-        <test-method signature="testDay5TestCase5(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:49:06 IST" name="testDay5TestCase5" data-provider="testCase5Data" finished-at="2023-11-13T18:49:19 IST" duration-ms="13448" status="PASS">
+        <test-method signature="testDay5TestCase5(java.lang.String,java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:02:49 IST" name="testDay5TestCase5" data-provider="testCase5Data" finished-at="2023-12-01T15:03:00 IST" duration-ms="11736" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -207,15 +37,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testDay5TestCase5 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:49:19 IST" name="tearDown" finished-at="2023-11-13T18:49:20 IST" duration-ms="340" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:03:00 IST" name="tearDown" finished-at="2023-12-01T15:03:00 IST" duration-ms="77" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:49:20 IST" name="openWebSite" finished-at="2023-11-13T18:49:24 IST" duration-ms="4599" status="PASS">
+        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:03:00 IST" name="openWebSite" finished-at="2023-12-01T15:03:05 IST" duration-ms="4120" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openWebSite -->
-        <test-method signature="test7(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:49:24 IST" name="test7" data-provider="testCase7Data" finished-at="2023-11-13T18:49:37 IST" duration-ms="12930" status="PASS">
+        <test-method signature="test7(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:03:05 IST" name="test7" data-provider="testCase7Data" finished-at="2023-12-01T15:03:16 IST" duration-ms="11383" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -231,15 +61,15 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test7 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:49:37 IST" name="tearDown" finished-at="2023-11-13T18:49:38 IST" duration-ms="323" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:03:16 IST" name="tearDown" finished-at="2023-12-01T15:03:16 IST" duration-ms="74" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:49:38 IST" name="openWebSite" finished-at="2023-11-13T18:49:39 IST" duration-ms="1798" status="PASS">
+        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:03:16 IST" name="openWebSite" finished-at="2023-12-01T15:03:20 IST" duration-ms="3891" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openWebSite -->
-        <test-method signature="test7(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:49:39 IST" name="test7" data-provider="testCase7Data" finished-at="2023-11-13T18:49:55 IST" duration-ms="15745" status="PASS">
+        <test-method signature="test7(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:03:20 IST" name="test7" data-provider="testCase7Data" finished-at="2023-12-01T15:03:31 IST" duration-ms="10822" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -255,47 +85,191 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- test7 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:49:55 IST" name="tearDown" finished-at="2023-11-13T18:49:56 IST" duration-ms="363" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:03:31 IST" name="tearDown" finished-at="2023-12-01T15:03:31 IST" duration-ms="72" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:49:56 IST" name="openWebSite" finished-at="2023-11-13T18:50:00 IST" duration-ms="4485" status="PASS">
+        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:03:31 IST" name="openWebSite" finished-at="2023-12-01T15:03:35 IST" duration-ms="4152" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openWebSite -->
-        <test-method signature="test7(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:50:00 IST" name="test7" data-provider="testCase7Data" finished-at="2023-11-13T18:50:12 IST" duration-ms="12012" status="PASS">
+        <test-method signature="testDay6TestCase6()[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:03:35 IST" name="testDay6TestCase6" finished-at="2023-12-01T15:03:46 IST" depends-on-methods="com.ecom.testCases.TestCases2.testDay5TestCase5" duration-ms="10901" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDay6TestCase6 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCases2@24959ca4]" started-at="2023-12-01T15:03:46 IST" name="tearDown" finished-at="2023-12-01T15:03:46 IST" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ecom.testCases.TestCases2 -->
+      <class name="com.ecom.testCases.TestCase1">
+        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:02:43 IST" name="openWebSite" finished-at="2023-12-01T15:02:49 IST" duration-ms="5240" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openWebSite -->
+        <test-method signature="testDay1TestCase1()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:02:49 IST" name="testDay1TestCase1" finished-at="2023-12-01T15:02:51 IST" duration-ms="1953" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDay1TestCase1 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:02:51 IST" name="tearDown" finished-at="2023-12-01T15:02:51 IST" duration-ms="85" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:02:51 IST" name="openWebSite" finished-at="2023-12-01T15:02:55 IST" duration-ms="4025" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openWebSite -->
+        <test-method signature="testDay2TestCase2(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:02:55 IST" name="testDay2TestCase2" data-provider="testCase2Data" finished-at="2023-12-01T15:02:56 IST" duration-ms="1404" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[SAMSUNG GALAXY]]>
+                <![CDATA[$100]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[Check / Money order]]>
+                <![CDATA[SONY XPERIA]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- test7 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:50:12 IST" name="tearDown" finished-at="2023-11-13T18:50:12 IST" duration-ms="318" status="PASS">
+        </test-method> <!-- testDay2TestCase2 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:02:56 IST" name="tearDown" finished-at="2023-12-01T15:02:56 IST" duration-ms="73" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:50:12 IST" name="openWebSite" finished-at="2023-11-13T18:50:17 IST" duration-ms="4445" status="PASS">
+        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:02:56 IST" name="openWebSite" finished-at="2023-12-01T15:03:00 IST" duration-ms="4220" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openWebSite -->
-        <test-method signature="testDay6TestCase6()[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:50:17 IST" name="testDay6TestCase6" finished-at="2023-11-13T18:50:29 IST" depends-on-methods="com.ecom.testCases.TestCases2.testDay5TestCase5" duration-ms="12164" status="PASS">
+        <test-method signature="testDay2TestCase2(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:00 IST" name="testDay2TestCase2" data-provider="testCase2Data" finished-at="2023-12-01T15:03:02 IST" duration-ms="1468" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[$500]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[IPHONE]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testDay6TestCase6 -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCases2@536dbea0]" started-at="2023-11-13T18:50:29 IST" name="tearDown" finished-at="2023-11-13T18:50:29 IST" duration-ms="306" status="PASS">
+        </test-method> <!-- testDay2TestCase2 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:02 IST" name="tearDown" finished-at="2023-12-01T15:03:02 IST" duration-ms="71" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.ecom.testCases.TestCases2 -->
-    </test> <!-- Test2 -->
+        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:02 IST" name="openWebSite" finished-at="2023-12-01T15:03:07 IST" duration-ms="5307" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openWebSite -->
+        <test-method signature="testDay3TestCase3(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:07 IST" name="testDay3TestCase3" data-provider="testCase3Data" finished-at="2023-12-01T15:03:18 IST" duration-ms="10756" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SONY XPERIA]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[The maximum quantity allowed for purchase is 500.]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SHOPPING CART IS EMPTY]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDay3TestCase3 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:18 IST" name="tearDown" finished-at="2023-12-01T15:03:18 IST" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:18 IST" name="openWebSite" finished-at="2023-12-01T15:03:22 IST" duration-ms="4086" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openWebSite -->
+        <test-method signature="testDay3TestCase3(java.lang.String,java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:22 IST" name="testDay3TestCase3" data-provider="testCase3Data" finished-at="2023-12-01T15:03:32 IST" duration-ms="10126" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[IPHONE]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[The maximum quantity allowed for purchase is 500.]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[SHOPPING CART IS EMPTY]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDay3TestCase3 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:32 IST" name="tearDown" finished-at="2023-12-01T15:03:32 IST" duration-ms="79" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:32 IST" name="openWebSite" finished-at="2023-12-01T15:03:36 IST" duration-ms="4021" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openWebSite -->
+        <test-method signature="testDay4TestCase4(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:36 IST" name="testDay4TestCase4" data-provider="testCase4Data" finished-at="2023-12-01T15:03:42 IST" duration-ms="5153" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SONY XPERIA]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[IPHONE]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDay4TestCase4 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:42 IST" name="tearDown" finished-at="2023-12-01T15:03:42 IST" duration-ms="83" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="openWebSite()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:42 IST" name="openWebSite" finished-at="2023-12-01T15:03:46 IST" duration-ms="4225" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openWebSite -->
+        <test-method signature="testDay4TestCase4(java.lang.String,java.lang.String)[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:46 IST" name="testDay4TestCase4" data-provider="testCase4Data" finished-at="2023-12-01T15:03:51 IST" duration-ms="5157" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[SONY XPERIA]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[SAMSUNG GALAXY]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDay4TestCase4 -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:com.ecom.testCases.TestCase1@37313c65]" started-at="2023-12-01T15:03:51 IST" name="tearDown" finished-at="2023-12-01T15:03:51 IST" duration-ms="77" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.ecom.testCases.TestCase1 -->
+    </test> <!-- Test1 -->
   </suite> <!-- Suite -->
 </testng-results>

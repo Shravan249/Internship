@@ -7,7 +7,7 @@
         <methods>
           <include name="openWebSite"/>
           <include name="tearDown"/>
-          <include name="test7"/>
+          <include name="test7" invocation-numbers="0 1 2"/>
         </methods>
       </class> <!-- com.ecom.testCases.TestCases2 -->
     </classes>

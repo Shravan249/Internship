@@ -4,7 +4,7 @@
   <listeners>
     <listener class-name="com.ecom.utilites.ListenersFile"/>
   </listeners>
-  <test thread-count="5" parallel="classes" name="Test(failed)">
+  <test thread-count="5" parallel="methods" name="Test1(failed)">
     <classes>
       <class name="com.ecom.testCases.TestCases2">
         <methods>
@@ -12,9 +12,18 @@
           <include name="openWebSite"/>
           <include name="tearDown"/>
           <include name="testDay5TestCase5"/>
-          <include name="test7"/>
         </methods>
       </class> <!-- com.ecom.testCases.TestCases2 -->
+      <class name="com.ecom.testCases.TestCase1">
+        <methods>
+          <include name="testDay1TestCase1"/>
+          <include name="openWebSite"/>
+          <include name="tearDown"/>
+          <include name="testDay3TestCase3" invocation-numbers="0"/>
+          <include name="testDay2TestCase2" invocation-numbers="1"/>
+          <include name="testDay4TestCase4" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- com.ecom.testCases.TestCase1 -->
     </classes>
-  </test> <!-- Test(failed) -->
+  </test> <!-- Test1(failed) -->
 </suite> <!-- Failed suite [Suite] -->

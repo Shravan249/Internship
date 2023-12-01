@@ -21,7 +21,6 @@ public class TestCases2 extends BaseClass {
 	CartPage cartPage;
 	WishlistPage wishlistPage;
 	CheckOutPage checkoutPage;
-	DataExtractors data=new DataExtractors();
 	
 	
 	
@@ -32,9 +31,9 @@ public class TestCases2 extends BaseClass {
 		 Verifying the functionality of the share wishlist to other people using email
 		 */
 
-		loginPage = new LoginPage(driver);
-		productPage = new ProductPage(driver);
-		wishlistPage = new WishlistPage(driver);
+		loginPage = new LoginPage(TestDriver.getDriver());
+		productPage = new ProductPage(TestDriver.getDriver());
+		wishlistPage = new WishlistPage(TestDriver.getDriver());
 		SoftAssert sa = new SoftAssert();
 
 		String expTitle = getValues("TvPageTitle");
@@ -67,11 +66,11 @@ public class TestCases2 extends BaseClass {
          Verifying the user able to purchase the product from wishlist
          */
 		
-		loginPage = new LoginPage(driver);
-		productPage = new ProductPage(driver);
-		wishlistPage = new WishlistPage(driver);
-		cartPage = new CartPage(driver);
-		checkoutPage = new CheckOutPage(driver);
+		loginPage = new LoginPage(TestDriver.getDriver());
+		productPage = new ProductPage(TestDriver.getDriver());
+		wishlistPage = new WishlistPage(TestDriver.getDriver());
+		cartPage = new CartPage(TestDriver.getDriver());
+		checkoutPage = new CheckOutPage(TestDriver.getDriver());
 
 		SoftAssert sa = new SoftAssert();
 
@@ -121,10 +120,10 @@ public class TestCases2 extends BaseClass {
 		 Verifying the user able to purchase the product 
 		  */
 		
-		loginPage = new LoginPage(driver);
-		productPage = new ProductPage(driver);
-		cartPage = new CartPage(driver);
-		checkoutPage = new CheckOutPage(driver);
+		loginPage = new LoginPage(TestDriver.getDriver());
+		productPage = new ProductPage(TestDriver.getDriver());
+		cartPage = new CartPage(TestDriver.getDriver());
+		checkoutPage = new CheckOutPage(TestDriver.getDriver());
 		
 		String expCartPagetilte = getValues("cartPageTitle");
 		String expCheckoutPageTitle = getValues("checkoutPageTitle");
@@ -145,7 +144,7 @@ public class TestCases2 extends BaseClass {
 		String actCheckouPagePageTitle = checkoutPage.getTitle();
 		checkoutPage.address();
 		Thread.sleep(3000);
-		String flatPrice = checkoutPage.getFlatPrice();
+		String flatPrice=checkoutPage.getFlatPrice();
 		checkoutPage.paymentMethod(paymentMethod);
 		String actProductName = checkoutPage.getProductName();
 		checkoutPage.placeOrder();
