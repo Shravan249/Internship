@@ -2,11 +2,9 @@ package com.ecom.testCases;
 
 import java.io.IOException;
 import java.util.List;
-
 import org.openqa.selenium.WebElement;
 import org.testng.annotations.Test;
 import org.testng.asserts.SoftAssert;
-
 import com.ecom.Exceldataproviders.DataExtractors;
 import com.ecom.pageObjects.CartPage;
 import com.ecom.pageObjects.CheckOutPage;
